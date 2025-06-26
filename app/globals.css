@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+
+    /* Custom light mode variables */
+    --app-bg-from: 210 40% 98%;
+    --app-bg-via: 220 30% 95%;
+    --app-bg-to: 210 40% 96%;
+
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.25;
+    --glass-highlight: 0 0% 100% / 0.9;
+    --glass-shadow: 215 20% 65% / 0.2;
+
+    --sidebar-bg: 0 0% 100% / 0.5;
+    --sidebar-border: 215 20% 65% / 0.2;
+
+    --text-primary: 222 47% 11%;
+    --text-secondary: 215 25% 27%;
+    --text-muted: 215 20% 45%;
+
+    --tab-active-bg: 0 0% 100% / 0.85;
+    --tab-active-border: 215 20% 65% / 0.3;
+    --tab-active-shadow: 215 20% 65% / 0.4;
+
+    --input-bg: 0 0% 100% / 0.5;
+    --input-border: 215 20% 65% / 0.2;
+    --input-placeholder: 215 20% 45% / 0.6;
+
+    --button-from: 210 30% 95%;
+    --button-to: 220 25% 90%;
+    --button-hover-from: 210 30% 92%;
+    --button-hover-to: 220 25% 87%;
+
+    --glow-color: 215 20% 65% / 0.3;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.5% 48%;
+
+    /* Custom dark mode variables */
+    --app-bg-from: 220 20% 9%;
+    --app-bg-via: 220 15% 8%;
+    --app-bg-to: 220 10% 5%;
+
+    --glass-bg: 255 255 255 / 0.08;
+    --glass-border: 255 255 255 / 0.2;
+    --glass-highlight: 255 255 255 / 0.2;
+    --glass-shadow: 0 0 0 / 0.3;
+
+    --sidebar-bg: 0 0% 0% / 0.4;
+    --sidebar-border: 255 255 255 / 0.1;
+
+    --text-primary: 0 0% 100%;
+    --text-secondary: 0 0% 100% / 0.8;
+    --text-muted: 0 0% 100% / 0.6;
+
+    --tab-active-bg: 255 255 255 / 0.2;
+    --tab-active-border: 255 255 255 / 0.3;
+    --tab-active-shadow: 0 0 0 / 0.4;
+
+    --input-bg: 255 255 255 / 0.08;
+    --input-border: 255 255 255 / 0.2;
+    --input-placeholder: 255 255 255 / 0.5;
+
+    --button-from: 220 15% 20%;
+    --button-to: 220 15% 15%;
+    --button-hover-from: 220 15% 25%;
+    --button-hover-to: 220 15% 20%;
+
+    --glow-color: 255 255 255 / 0.2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Enhanced VisionOS-style animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--glow-color));
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--glow-color));
+  }
+}
+
+@keyframes gentle-bounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.animate-gentle-bounce {
+  animation: gentle-bounce 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+/* Enhanced backdrop blur for better glass effect */
+.backdrop-blur-3xl {
+  backdrop-filter: blur(64px);
+}
+
+.backdrop-blur-4xl {
+  backdrop-filter: blur(80px);
+}
+
+/* VisionOS-style glass morphism */
+.glass-panel {
+  background: hsla(var(--glass-bg));
+  backdrop-filter: blur(40px);
+  border: 1px solid hsla(var(--glass-border));
+  box-shadow: 0 8px 32px hsla(var(--glass-shadow)), inset 0 1px 0 hsla(var(--glass-highlight));
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.glass-panel:hover {
+  background: hsla(var(--glass-bg), 1.3);
+  box-shadow: 0 12px 40px hsla(var(--glass-shadow), 1.2), inset 0 1px 0 hsla(var(--glass-highlight), 1.2);
+  transform: translateY(-1px) scale(1.005);
+}
+
+/* Enhanced input container focus */
+.input-container {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  background: hsla(var(--input-bg));
+  border-color: hsla(var(--input-border));
+}
+
+.input-container:focus-within {
+  background: hsla(var(--input-bg), 1.2);
+  box-shadow: 0 8px 32px hsla(var(--glass-shadow), 0.6), inset 0 1px 0 hsla(var(--glass-highlight), 0.8);
+  transform: scale(1.01);
+}
+
+/* Button hover enhancements */
+.glass-button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsla(var(--glass-highlight), 0.5), transparent);
+  transition: left 0.6s ease;
+}
+
+.glass-button:hover {
+  transform: translateY(-1px) scale(1.01);
+  background: hsla(var(--glass-bg), 0.8);
+  box-shadow: 0 6px 20px hsla(var(--glass-shadow), 1.2);
+}
+
+.glass-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Tab enhancements */
+.tab-trigger {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-trigger::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: hsla(var(--glass-bg), 0.5);
+  border-radius: inherit;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tab-trigger:hover:not([data-state="active"]) {
+  transform: translateY(-1px) scale(1.01);
+  background: hsla(var(--glass-bg), 0.8);
+}
+
+.tab-trigger[data-state="active"] {
+  transform: translateY(-1px) scale(1.02);
+  background: hsla(var(--tab-active-bg)) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 6px 20px hsla(var(--tab-active-shadow), 0.6), inset 0 1px 0 hsla(var(--glass-highlight), 0.8) !important;
+}
+
+/* Tab content animations */
+.tab-content {
+  animation: tab-content-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes tab-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Sidebar animations */
+.sidebar-item {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.sidebar-item:hover {
+  transform: translateX(2px);
+  background: hsla(var(--glass-bg), 0.5);
+  border-color: hsla(var(--glass-border), 0.2);
+}
+
+/* Quick action cards */
+.quick-action {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.quick-action:hover {
+  transform: translateY(-1px) scale(1.02);
+  background: hsla(var(--glass-bg), 0.8);
+  border-color: hsla(var(--glass-border), 0.5);
+  box-shadow: 0 6px 20px hsla(var(--glass-shadow), 1.2);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform,
+    backdrop-filter, scale;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 300ms;
+}
+
+/* Stagger animation for sidebar items */
+.sidebar-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.sidebar-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.sidebar-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.sidebar-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.sidebar-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* App background */
+.app-bg {
+  background: linear-gradient(to bottom right, hsl(var(--app-bg-from)), hsl(var(--app-bg-via)), hsl(var(--app-bg-to)));
+}
+
+/* Sidebar background */
+.sidebar-bg {
+  background: hsla(var(--sidebar-bg));
+  border-color: hsla(var(--sidebar-border));
+}
+
+/* Text colors */
+.text-primary {
+  color: hsl(var(--text-primary));
+}
+
+.text-secondary {
+  color: hsl(var(--text-secondary));
+}
+
+.text-muted {
+  color: hsl(var(--text-muted));
+}
+
+/* Button gradient */
+.button-gradient {
+  background: linear-gradient(to right, hsl(var(--button-from)), hsl(var(--button-to)));
+}
+
+.button-gradient:hover {
+  background: linear-gradient(to right, hsl(var(--button-hover-from)), hsl(var(--button-hover-to)));
+}
+
+* {
+  outline: none !important;
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
