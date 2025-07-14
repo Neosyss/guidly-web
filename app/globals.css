@@ -199,6 +199,19 @@
 }
 
 /* VisionOS-style glass morphism */
+.navbar-glass-panel {
+  background: hsla(var(--glass-bg));
+  backdrop-filter: blur(40px);
+  border: 1px solid hsla(var(--glass-border));
+  box-shadow: 0 8px 32px hsla(var(--glass-shadow)), inset 0 1px 0 hsla(var(--glass-highlight));
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.navbar-glass-panel:hover {
+  box-shadow: 0 20px 60px hsla(var(--glass-shadow)), inset 0 1px 0 hsla(var(--glass-highlight));
+  transform: translateX(-50%) translateY(-2px) scale(1.01);
+}
+
 .glass-panel {
   background: hsla(var(--glass-bg));
   backdrop-filter: blur(40px);
@@ -208,8 +221,7 @@
 }
 
 .glass-panel:hover {
-  background: hsla(var(--glass-bg), 1.3);
-  box-shadow: 0 12px 40px hsla(var(--glass-shadow), 1.2), inset 0 1px 0 hsla(var(--glass-highlight), 1.2);
+  box-shadow: 0 20px 60px hsla(var(--glass-shadow)), inset 0 1px 0 hsla(var(--glass-highlight));
   transform: translateY(-1px) scale(1.005);
 }
 

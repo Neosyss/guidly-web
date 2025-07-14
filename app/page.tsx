@@ -27,6 +27,7 @@ import { Input } from "@/components/ui/input"
 export default function LandingPage() {
   const router = useRouter()
   const [email, setEmail] = useState("")
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   // Check if user is already authenticated
   useEffect(() => {
@@ -79,42 +80,31 @@ export default function LandingPage() {
 
       <div className="relative z-10">
         {/* Enhanced Navigation - Fixed at top */}
-        <nav className="glass-panel backdrop-blur-3xl border-b border-white/10 fixed top-0 left-0 right-0 z-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
+        <nav className="navbar-glass-panel rounded-2xl fixed top-4 left-1/2 transform -translate-x-1/2 z-50 shadow-2xl">
+          <div className="px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16 gap-8 lg:gap-16">
               <div className="flex items-center gap-3">
-                <div className="glass-panel p-2 rounded-xl shadow-lg animate-gentle-bounce">
+                <div className="navbar-glass-panel p-2 rounded-xl shadow-lg animate-gentle-bounce">
                   <Sparkles className="h-8 w-8 text-primary" />
                 </div>
-                <div>
-                  <span className="text-2xl font-bold text-primary">Guidly</span>
-                  <div className="text-xs text-muted font-medium">AI Life Companion</div>
-                </div>
               </div>
-              <div className="hidden md:flex items-center gap-8">
-                <a href="#features" className="text-secondary hover:text-primary transition-colors">
+              <div className="hidden md:flex items-center gap-12 flex-1 justify-center">
+                <a href="#features" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors">
                   Features
                 </a>
-                <a href="#how-it-works" className="text-secondary hover:text-primary transition-colors">
+                <a href="#how-it-works" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors">
                   How it Works
                 </a>
-                <a href="#faq" className="text-secondary hover:text-primary transition-colors">
+                <a href="#faq" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors">
                   FAQ
                 </a>
               </div>
               <div className="flex items-center gap-4">
                 <Button
-                  variant="ghost"
                   onClick={() => router.push("/auth")}
-                  className="text-primary hover:text-primary/80 hover:bg-primary/5 rounded-xl px-4 py-2"
+                  className="bg-[rgb(4,131,131)] hover:bg-[rgb(3,110,110)] text-white shadow-xl rounded-xl px-6 py-2 font-semibold border border-primary/30 hover:scale-105 transition-all duration-300"
                 >
                   Sign In
-                </Button>
-                <Button
-                  onClick={() => router.push("/auth?mode=register")}
-                  className="bg-primary/90 hover:bg-primary text-white shadow-xl rounded-xl px-6 py-2 font-semibold border border-primary/30 hover:scale-105 transition-all duration-300"
-                >
-                  Get Started Free
                 </Button>
               </div>
             </div>
@@ -126,10 +116,6 @@ export default function LandingPage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in-up">
-                <div className="inline-flex items-center gap-2 glass-panel rounded-full px-4 py-2 mb-6 shadow-lg">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-primary font-medium">10,000+ Lives Transformed</span>
-                </div>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
                   Your AI-Powered
                   <br />
@@ -137,27 +123,30 @@ export default function LandingPage() {
                     Life Companion
                   </span>
                 </h1>
+                <p className="text-xl md:text-2xl text-secondary leading-relaxed">
+                  Navigate life's challenges with personalized AI guidance for career growth, resume building, and
+                  entrepreneurial success.
+                </p>
                 <p className="text-xl md:text-2xl text-secondary mb-8 leading-relaxed">
-                  Navigate life's challenges with personalized AI guidance for mental wellness, career growth, and
-                  entrepreneurial success. Available 24/7, completely private, and tailored just for you.
+                  Available 24/7, completely private, and tailored just for you.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button
                     onClick={() => router.push("/auth?mode=register")}
-                    className="bg-primary/90 hover:bg-primary text-white shadow-2xl rounded-2xl px-8 py-4 text-lg font-semibold border border-primary/30 hover:scale-105 transition-all duration-300 group"
+                    className="bg-[rgb(4,131,131)] hover:bg-[rgb(3,110,110)] text-white shadow-2xl rounded-2xl px-8 py-4 text-md font-semibold border border-primary/30 hover:scale-105 transition-all duration-300 group"
                   >
-                    Start Your Journey Free
+                    Start Your Journey Now
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
                 </div>
                 <div className="flex items-center gap-6 text-sm text-secondary">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    No credit card required
+                    Start free
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    Free forever plan
+                    Instant career guidance
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
@@ -183,20 +172,20 @@ export default function LandingPage() {
                     <div className="space-y-4">
                       <div className="glass-panel rounded-2xl p-4 ml-8">
                         <p className="text-primary text-sm">
-                          "I'm feeling overwhelmed with my career transition. Can you help me create a plan?"
+                          I'm feeling overwhelmed with my career transition. Can you help me create a plan?
                         </p>
                       </div>
                       <div className="glass-panel rounded-2xl p-4 mr-8 bg-primary/10">
                         <p className="text-primary text-sm">
-                          "I understand this is a challenging time. Let's break down your transition into manageable
-                          steps. First, let's identify your core strengths and values..."
+                          I understand this is a challenging time. Let's break down your transition into manageable
+                          steps. First, let's identify your core strengths and values...
                         </p>
                       </div>
                       <div className="flex items-center gap-2 text-muted text-xs">
                         <div className="flex space-x-1">
-                          <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
-                          <div className="w-2 h-2 bg-primary rounded-full animate-bounce delay-100"></div>
-                          <div className="w-2 h-2 bg-primary rounded-full animate-bounce delay-200"></div>
+                          <div className="w-2 h-2 bg-[rgb(4,131,131)] rounded-full animate-bounce"></div>
+                          <div className="w-2 h-2 bg-[rgb(4,131,131)] rounded-full animate-bounce delay-100"></div>
+                          <div className="w-2 h-2 bg-[rgb(4,131,131)] rounded-full animate-bounce delay-200"></div>
                         </div>
                         <span>AI is typing...</span>
                       </div>
@@ -209,27 +198,34 @@ export default function LandingPage() {
         </section>
 
         {/* Trust Indicators */}
-        <section className="py-12 px-4 sm:px-6 lg:px-8 border-y border-white/10">
+        <section id="why-users-love-guidly" className="py-12 px-4 sm:px-6 lg:px-8 border-y border-white/10">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8">
-              <p className="text-secondary text-sm">Trusted by professionals worldwide</p>
+            <div className="text-center mb-16 animate-fade-in-up">
+              <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Why You’ll Love Guidly</h2>
+              <p className="text-xl text-secondary max-w-3xl mx-auto">
+                Guidly is your personal career co-pilot — helping you explore career paths, craft standout resumes, and move forward with clarity.
+              </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300">
-                <div className="text-3xl font-bold text-primary mb-2">10K+</div>
-                <div className="text-secondary text-sm">Active Users</div>
+            <div className="flex flex-wrap justify-center gap-5 text-center">
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 w-full sm:w-1/2 md:w-1/3">
+                <div className="text-3xl font-bold text-primary mb-2">AI-Powered Guidance</div>
+                <div className="text-secondary text-sm">Personalized insights for your career journey</div>
               </div>
-              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300">
-                <div className="text-3xl font-bold text-primary mb-2">95%</div>
-                <div className="text-secondary text-sm">Satisfaction Rate</div>
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 w-full sm:w-1/2 md:w-1/3">
+                <div className="text-3xl font-bold text-primary mb-2">Resume Builder</div>
+                <div className="text-secondary text-sm">Create compelling resumes in minutes</div>
               </div>
-              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300">
-                <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-secondary text-sm">AI Support</div>
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 w-full sm:w-1/2 md:w-1/3">
+                <div className="text-3xl font-bold text-primary mb-2">Always Available</div>
+                <div className="text-secondary text-sm">Your 24/7 career assistant</div>
               </div>
-              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300">
-                <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                <div className="text-secondary text-sm">Countries</div>
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 w-full sm:w-1/2 md:w-1/3">
+                <div className="text-3xl font-bold text-primary mb-2">Built for Everyone</div>
+                <div className="text-secondary text-sm">From students to professionals to career switchers</div>
+              </div>
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 w-full sm:w-1/2 md:w-1/3">
+                <div className="text-3xl font-bold text-primary mb-2">Zero Pressure</div>
+                <div className="text-secondary text-sm">Start free, explore at your own pace</div>
               </div>
             </div>
           </div>
@@ -248,12 +244,12 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center animate-fade-in-up">
                 <div className="glass-panel rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-xl relative">
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-[rgb(4,131,131)] rounded-full flex items-center justify-center text-white text-sm font-bold">
                     1
                   </div>
                   <Users className="h-10 w-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-4">Sign Up & Share</h3>
+                <h3 className="text-xl font-bold text-primary mb-4">Sign Up</h3>
                 <p className="text-secondary leading-relaxed">
                   Create your account and tell us about your goals, challenges, and what you'd like to work on.
                 </p>
@@ -261,7 +257,7 @@ export default function LandingPage() {
 
               <div className="text-center animate-fade-in-up delay-200">
                 <div className="glass-panel rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-xl relative">
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-[rgb(4,131,131)] rounded-full flex items-center justify-center text-white text-sm font-bold">
                     2
                   </div>
                   <Zap className="h-10 w-10 text-primary" />
@@ -274,7 +270,7 @@ export default function LandingPage() {
 
               <div className="text-center animate-fade-in-up delay-400">
                 <div className="glass-panel rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-xl relative">
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-[rgb(4,131,131)] rounded-full flex items-center justify-center text-white text-sm font-bold">
                     3
                   </div>
                   <Heart className="h-10 w-10 text-primary" />
@@ -450,13 +446,26 @@ export default function LandingPage() {
                   className="glass-panel rounded-2xl p-6 shadow-lg animate-fade-in-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <details className="group">
-                    <summary className="flex justify-between items-center cursor-pointer text-primary font-semibold text-lg">
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  >
+                    <div className="flex justify-between items-center text-primary font-semibold text-lg">
                       {faq.question}
-                      <ChevronDown className="h-5 w-5 group-open:rotate-180 transition-transform duration-300" />
-                    </summary>
-                    <p className="text-secondary mt-4 leading-relaxed">{faq.answer}</p>
-                  </details>
+                      <ChevronDown 
+                        className={`h-5 w-5 transition-transform duration-300 ease-in-out ${
+                          openFaq === index ? 'rotate-180' : ''
+                        }`} 
+                      />
+                    </div>
+                    <div 
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        openFaq === index ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
+                      }`}
+                    >
+                      <p className="text-secondary leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
