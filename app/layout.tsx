@@ -9,9 +9,20 @@ import { SessionProvider } from "@/contexts/SessionContext"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Neo-AI Counseling - Your AI Life Companion",
-  description: "Navigate life's challenges with personalized AI guidance for mental wellness, career growth, and entrepreneurial success",
-  generator: 'v0.dev'
+  title: "Guidly - AI Career Companion",
+  description: "Transform your career with AI-powered resume building, personalized career guidance, and interview preparation. Available 24/7.",
+  generator: 'v0.dev',
+  icons: {
+    icon: [
+      {
+        url: '/guidly_logos/Guidly/Favicon-2.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+    ],
+    shortcut: '/guidly_logos/Guidly/Favicon-2.png',
+    apple: '/guidly_logos/Guidly/Favicon-2.png',
+  },
 }
 
 export default function RootLayout({
