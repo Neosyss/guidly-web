@@ -12,14 +12,18 @@ import {
   ArrowRight,
   Shield,
   Clock,
+  User,
+  FileText,
+  Trophy,
   Users,
   CheckCircle,
   MessageSquare,
-  Zap,
   Heart,
   Target,
   Award,
   ChevronDown,
+  Linkedin,
+  Instagram,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -84,13 +88,20 @@ export default function LandingPage() {
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16 gap-8 lg:gap-16">
               <div className="flex items-center gap-3">
-                <div className="navbar-glass-panel p-2 rounded-xl shadow-lg animate-gentle-bounce">
-                  <Sparkles className="h-8 w-8 text-primary" />
+                <div className="p-1 rounded-xl animate-gentle-bounce">
+                  <img 
+                    src="/guidly_logos/Guidly/Guidly-Logo.png" 
+                    alt="Guidly Logo" 
+                    className="h-10 w-auto object-contain"
+                  />
                 </div>
               </div>
               <div className="hidden md:flex items-center gap-12 flex-1 justify-center">
                 <a href="#features" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors">
                   Features
+                </a>
+                <a href="#why-users-love-guidly" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors">
+                  Why Choose Guidly
                 </a>
                 <a href="#how-it-works" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors">
                   How it Works
@@ -114,7 +125,7 @@ export default function LandingPage() {
         {/* Enhanced Hero Section - Add top padding to account for fixed header */}
         <section className="pt-36 pb-32 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div className="animate-fade-in-up">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
                   Your AI-Powered
@@ -123,7 +134,7 @@ export default function LandingPage() {
                     Life Companion
                   </span>
                 </h1>
-                <p className="text-xl md:text-2xl text-secondary leading-relaxed">
+                <p className="text-xl md:text-2xl text-secondary mb-4 leading-relaxed">
                   Navigate life's challenges with personalized AI guidance for career growth, resume building, and
                   entrepreneurial success.
                 </p>
@@ -133,7 +144,7 @@ export default function LandingPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button
                     onClick={() => router.push("/auth?mode=register")}
-                    className="bg-[rgb(4,131,131)] hover:bg-[rgb(3,110,110)] text-white shadow-2xl rounded-2xl px-8 py-4 text-md font-semibold border border-primary/30 hover:scale-105 transition-all duration-300 group"
+                    className="bg-[rgb(4,131,131)] hover:bg-[rgb(3,110,110)] text-white shadow-2xl rounded-2xl px-8 py-6 text-md font-semibold border border-primary/30 hover:scale-105 transition-all duration-300 group"
                   >
                     Start Your Journey Now
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -141,15 +152,15 @@ export default function LandingPage() {
                 </div>
                 <div className="flex items-center gap-6 text-sm text-secondary">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <CheckCircle className="h-4 w-4 text-[rgb(4,131,131)]" />
                     Start free
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <CheckCircle className="h-4 w-4 text-[rgb(4,131,131)]" />
                     Instant career guidance
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <CheckCircle className="h-4 w-4 text-[rgb(4,131,131)]" />
                     Cancel anytime
                   </div>
                 </div>
@@ -165,8 +176,7 @@ export default function LandingPage() {
                         <Brain className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <div className="text-primary font-semibold">AI Counselor</div>
-                        <div className="text-xs text-muted">Online now</div>
+                        <div className="text-primary font-semibold">Career Guidance</div>
                       </div>
                     </div>
                     <div className="space-y-4">
@@ -197,35 +207,76 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Trust Indicators */}
-        <section id="why-users-love-guidly" className="py-12 px-4 sm:px-6 lg:px-8 border-y border-white/10">
+        {/* Why You'll Love Guidly - Enhanced Combined Section */}
+        <section id="why-users-love-guidly" className="py-20 px-4 sm:px-6 lg:px-8 border-y border-white/10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
-              <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Why You’ll Love Guidly</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Why You'll Love Guidly</h2>
               <p className="text-xl text-secondary max-w-3xl mx-auto">
-                Guidly is your personal career co-pilot — helping you explore career paths, craft standout resumes, and move forward with clarity.
+                Your complete career transformation toolkit with AI-powered resume building, personalized guidance, and round-the-clock support.
               </p>
             </div>
-            <div className="flex flex-wrap justify-center gap-5 text-center">
-              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 w-full sm:w-1/2 md:w-1/3">
-                <div className="text-3xl font-bold text-primary mb-2">AI-Powered Guidance</div>
-                <div className="text-secondary text-sm">Personalized insights for your career journey</div>
+            
+            {/* Main Feature Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 animate-fade-in-up">
+                <div className="glass-panel rounded-xl p-3 w-12 h-12 mb-4 flex items-center justify-center">
+                  <FileText className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-xl font-bold text-primary mb-3">AI Resume Builder</h4>
+                <p className="text-secondary leading-relaxed">
+                  Create professionally crafted resumes in minutes with AI optimization for your target roles and industries.
+                </p>
               </div>
-              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 w-full sm:w-1/2 md:w-1/3">
-                <div className="text-3xl font-bold text-primary mb-2">Resume Builder</div>
-                <div className="text-secondary text-sm">Create compelling resumes in minutes</div>
+              
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+                <div className="glass-panel rounded-xl p-3 w-12 h-12 mb-4 flex items-center justify-center">
+                  <Briefcase className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-xl font-bold text-primary mb-3">Career Guidance</h4>
+                <p className="text-secondary leading-relaxed">
+                  Get personalized career advice, strategic planning, and skill development recommendations tailored to your goals.
+                </p>
               </div>
-              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 w-full sm:w-1/2 md:w-1/3">
-                <div className="text-3xl font-bold text-primary mb-2">Always Available</div>
-                <div className="text-secondary text-sm">Your 24/7 career assistant</div>
+              
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+                <div className="glass-panel rounded-xl p-3 w-12 h-12 mb-4 flex items-center justify-center">
+                  <Clock className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-xl font-bold text-primary mb-3">24/7 Availability</h4>
+                <p className="text-secondary leading-relaxed">
+                  Get support whenever you need it, day or night, across all time zones. Your AI career coach never sleeps.
+                </p>
               </div>
-              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 w-full sm:w-1/2 md:w-1/3">
-                <div className="text-3xl font-bold text-primary mb-2">Built for Everyone</div>
-                <div className="text-secondary text-sm">From students to professionals to career switchers</div>
+              
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+                <div className="glass-panel rounded-xl p-3 w-12 h-12 mb-4 flex items-center justify-center">
+                  <Shield className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-xl font-bold text-primary mb-3">100% Private & Secure</h4>
+                <p className="text-secondary leading-relaxed">
+                  End-to-end encryption ensures your conversations and career information remain completely confidential.
+                </p>
               </div>
-              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 w-full sm:w-1/2 md:w-1/3">
-                <div className="text-3xl font-bold text-primary mb-2">Zero Pressure</div>
-                <div className="text-secondary text-sm">Start free, explore at your own pace</div>
+              
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+                <div className="glass-panel rounded-xl p-3 w-12 h-12 mb-4 flex items-center justify-center">
+                  <MessageSquare className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-xl font-bold text-primary mb-3">Interview Preparation</h4>
+                <p className="text-secondary leading-relaxed">
+                  Get ready for interviews with AI-powered practice sessions, common question prep, and confidence-building techniques.
+                </p>
+              </div>
+              
+              <div className="glass-panel rounded-2xl p-6 hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '500ms' }}>
+                <div className="glass-panel rounded-xl p-3 w-12 h-12 mb-4 flex items-center justify-center">
+                  <Users className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-xl font-bold text-primary mb-3">Built for Everyone</h4>
+                <p className="text-secondary leading-relaxed">
+                  Whether you're a student, professional, or career changer, Guidly adapts to your experience level and goals.
+                </p>
               </div>
             </div>
           </div>
@@ -237,21 +288,21 @@ export default function LandingPage() {
             <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">How Guidly Works</h2>
               <p className="text-xl text-secondary max-w-3xl mx-auto">
-                Get started in minutes and begin your transformation journey with AI-powered guidance
+                Transform your career in three simple steps with AI-powered resume building and personalized career guidance
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
               <div className="text-center animate-fade-in-up">
                 <div className="glass-panel rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-xl relative">
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-[rgb(4,131,131)] rounded-full flex items-center justify-center text-white text-sm font-bold">
                     1
                   </div>
-                  <Users className="h-10 w-10 text-primary" />
+                  <User className="h-10 w-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-4">Sign Up</h3>
+                <h3 className="text-xl font-bold text-primary mb-4">Tell Guidly Your Story</h3>
                 <p className="text-secondary leading-relaxed">
-                  Create your account and tell us about your goals, challenges, and what you'd like to work on.
+                  Tell Guidly about your experience, skills, career goals, and the type of roles you're targeting. Guidly learns your unique profile.
                 </p>
               </div>
 
@@ -260,11 +311,11 @@ export default function LandingPage() {
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-[rgb(4,131,131)] rounded-full flex items-center justify-center text-white text-sm font-bold">
                     2
                   </div>
-                  <Zap className="h-10 w-10 text-primary" />
+                  <FileText className="h-10 w-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-4">AI Analysis</h3>
+                <h3 className="text-xl font-bold text-primary mb-4">Guidly Crafts Your Path</h3>
                 <p className="text-secondary leading-relaxed">
-                  Our advanced AI analyzes your situation and creates a personalized guidance plan tailored to you.
+                  Guidly analyzes your profile and creates a personalized resume, career roadmap, and tailored strategies for your success.
                 </p>
               </div>
 
@@ -273,134 +324,162 @@ export default function LandingPage() {
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-[rgb(4,131,131)] rounded-full flex items-center justify-center text-white text-sm font-bold">
                     3
                   </div>
-                  <Heart className="h-10 w-10 text-primary" />
+                  <Trophy className="h-10 w-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-4">Grow & Thrive</h3>
+                <h3 className="text-xl font-bold text-primary mb-4">Guidly Helps You Win</h3>
                 <p className="text-secondary leading-relaxed">
-                  Receive ongoing support, track your progress, and achieve your personal and professional goals.
+                  Land roles with confidence using your optimized resume, interview prep tips, and ongoing career support from Guidly.
                 </p>
               </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="text-center mt-12 animate-fade-in-up delay-600">
+              <Button
+                onClick={() => router.push("/auth?mode=register")}
+                className="bg-[rgb(4,131,131)] hover:bg-[rgb(3,110,110)] text-white shadow-2xl rounded-2xl px-8 py-6 text-lg font-semibold border border-primary/30 hover:scale-105 transition-all duration-300 group"
+              >
+                Launch Your Career Now
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Button>
             </div>
           </div>
         </section>
 
         {/* Enhanced Features Section */}
-        <section id="features" className="py-20 px-4 sm:px-6 lg:px-8">
+        <section id="features" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in-up">
-              <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Three Pillars of Growth</h2>
-              <p className="text-xl text-secondary max-w-3xl mx-auto">
-                Comprehensive AI guidance tailored to your unique journey and aspirations
+            <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-primary mb-4 md:mb-6">Career-Ready Features, All in One Place</h2>
+              <p className="text-lg md:text-xl text-secondary max-w-3xl mx-auto px-4">
+                From building your resume to preparing for interviews, Guidly gives you the tools to take on every step with confidence.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {/* Mental Wellness */}
-              <div className="glass-panel rounded-3xl p-8 shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-500 group animate-fade-in-up">
-                <div className="glass-panel rounded-3xl p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300">
-                  <Brain className="h-10 w-10 text-primary" />
+            {/* Feature 1: Resume Builder - Text Left, Image Right */}
+            <div className="glass-panel rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 shadow-2xl hover:shadow-3xl transition-all duration-500 mb-8 md:mb-16 animate-fade-in-up">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+                <div className="space-y-4 md:space-y-6">
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className="glass-panel rounded-xl md:rounded-2xl p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center shadow-lg">
+                      <FileText className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary">Resume Builder</h3>
+                  </div>
+                  <p className="text-base md:text-lg lg:text-xl text-secondary leading-relaxed">
+                    Create professional, ATS-optimized resumes in minutes with our AI-powered builder. Tailored for your industry, role, and experience level.
+                  </p>
+                  <ul className="space-y-3 md:space-y-4 text-sm md:text-base lg:text-lg text-secondary">
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      ATS-friendly templates optimized for modern hiring systems
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      AI-powered content suggestions based on your role
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      Industry-specific keywords and formatting
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      Real-time optimization and improvement suggestions
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-4 text-center">Mental Wellness</h3>
-                <p className="text-secondary text-center leading-relaxed mb-6">
-                  Navigate emotional challenges with AI-powered mindfulness practices, stress management techniques, and
-                  personalized mental health support.
-                </p>
-                <ul className="space-y-3 text-sm text-secondary">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Stress & anxiety management
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Mindfulness & meditation guidance
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Emotional regulation techniques
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Crisis support & coping strategies
-                  </li>
-                </ul>
-              </div>
-
-              {/* Career Guidance */}
-              <div className="glass-panel rounded-3xl p-8 shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-500 group animate-fade-in-up delay-200">
-                <div className="glass-panel rounded-3xl p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300">
-                  <Briefcase className="h-10 w-10 text-primary" />
+                <div className="glass-panel rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
+                  <img 
+                    src="/placeholder.jpg" 
+                    alt="AI Resume Builder Interface" 
+                    className="w-full h-48 md:h-64 lg:h-80 object-cover rounded-lg md:rounded-xl"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-4 text-center">Career Guidance</h3>
-                <p className="text-secondary text-center leading-relaxed mb-6">
-                  Accelerate your professional growth with strategic career planning, skill development, and interview
-                  preparation powered by AI insights.
-                </p>
-                <ul className="space-y-3 text-sm text-secondary">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Career transition planning
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Skill gap analysis & development
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Interview & resume optimization
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Salary negotiation strategies
-                  </li>
-                </ul>
-              </div>
-
-              {/* Entrepreneurship */}
-              <div className="glass-panel rounded-3xl p-8 shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-500 group animate-fade-in-up delay-400">
-                <div className="glass-panel rounded-3xl p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300">
-                  <TrendingUp className="h-10 w-10 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold text-primary mb-4 text-center">Entrepreneurship</h3>
-                <p className="text-secondary text-center leading-relaxed mb-6">
-                  Transform innovative ideas into successful ventures with AI-driven business strategy, market analysis,
-                  and growth planning.
-                </p>
-                <ul className="space-y-3 text-sm text-secondary">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Business idea validation
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Market analysis & strategy
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Funding & growth planning
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Pitch deck & investor prep
-                  </li>
-                </ul>
               </div>
             </div>
 
-            {/* Additional Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="glass-panel rounded-2xl p-6 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="glass-panel rounded-xl p-3 w-12 h-12 mb-4 flex items-center justify-center">
-                    <feature.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h4 className="text-lg font-bold text-primary mb-2">{feature.title}</h4>
-                  <p className="text-secondary text-sm leading-relaxed">{feature.description}</p>
+            {/* Feature 2: Career Guidance - Text Right, Image Left */}
+            <div className="glass-panel rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 shadow-2xl hover:shadow-3xl transition-all duration-500 mb-8 md:mb-16 animate-fade-in-up">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+                <div className="glass-panel rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg lg:order-1">
+                  <img 
+                    src="/placeholder.jpg" 
+                    alt="Personalized Career Guidance" 
+                    className="w-full h-48 md:h-64 lg:h-80 object-cover rounded-lg md:rounded-xl"
+                  />
                 </div>
-              ))}
+                <div className="space-y-4 md:space-y-6 lg:order-2">
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className="glass-panel rounded-xl md:rounded-2xl p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center shadow-lg">
+                      <Briefcase className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary">Career Guidance</h3>
+                  </div>
+                  <p className="text-base md:text-lg lg:text-xl text-secondary leading-relaxed">
+                    Get personalized career advice from our AI counselor. Navigate career transitions, skill development, and strategic planning with confidence.
+                  </p>
+                  <ul className="space-y-3 md:space-y-4 text-sm md:text-base lg:text-lg text-secondary">
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      Personalized career path recommendations
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      Skills gap analysis and development roadmap
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      Job market insights and salary negotiation tips
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      Career transition support and strategic planning
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Feature 3: Mock Interview Coach - Text Left, Image Right */}
+            <div className="glass-panel rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 shadow-2xl hover:shadow-3xl transition-all duration-500 mb-8 md:mb-16 animate-fade-in-up">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+                <div className="space-y-4 md:space-y-6">
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className="glass-panel rounded-xl md:rounded-2xl p-3 md:p-4 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center shadow-lg">
+                      <MessageSquare className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary">Mock Interview Coach</h3>
+                  </div>
+                  <p className="text-base md:text-lg lg:text-xl text-secondary leading-relaxed">
+                    Practice with our Mock Interview Coach, tailored to your role and experience. Get real-time feedback and build confidence before the big day.
+                  </p>
+                  <ul className="space-y-3 md:space-y-4 text-sm md:text-base lg:text-lg text-secondary">
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      Role-specific interview questions and scenarios
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      Real-time feedback on your responses
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      Behavioral and technical interview practice
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[rgb(4,131,131)] flex-shrink-0" />
+                      Confidence building and communication improvement
+                    </li>
+                  </ul>
+                </div>
+                <div className="glass-panel rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
+                  <img 
+                    src="/placeholder.jpg" 
+                    alt="AI Mock Interview Session" 
+                    className="w-full h-48 md:h-64 lg:h-80 object-cover rounded-lg md:rounded-xl"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -416,29 +495,34 @@ export default function LandingPage() {
             <div className="space-y-4">
               {[
                 {
-                  question: "Is Guidly really free?",
+                  question: "Is Guidly free to use?",
                   answer:
-                    "Yes! Guidly offers a comprehensive free plan that includes unlimited basic conversations with our AI counselor. Premium features like advanced analytics and priority support are available with our paid plans.",
+                    "Guidly operates on a credit-based system. You can get started for free with a limited number of credits, which give you access to core features like resume building and basic career tools. Additional features and more usage are available through credit top-ups or subscriptions.",
+                },
+                {
+                  question: "How does Guidly create my resume?",
+                  answer:
+                    "Guidly analyzes your background, skills, and target roles to create ATS-optimized resumes. It uses industry-specific templates and keywords to ensure your resume passes through applicant tracking systems and catches recruiters' attention.",
+                },
+                {
+                  question: "What makes Guidly different from other career tools?",
+                  answer:
+                    "Guidly combines resume building, personalized career guidance, and interview preparation in one platform. Our AI learns your unique career story and provides tailored advice that evolves with your professional growth.",
                 },
                 {
                   question: "How private and secure are my conversations?",
                   answer:
-                    "Your privacy is our top priority. All conversations are encrypted end-to-end, and we never share your personal information with third parties. Our AI processes your data locally and securely.",
+                    "Your privacy is our top priority. All conversations are encrypted end-to-end, and we never share your personal information with third parties. Your career data is processed securely and remains completely confidential.",
                 },
                 {
-                  question: "Can Guidly replace human therapy?",
+                  question: "Can Guidly help me prepare for interviews?",
                   answer:
-                    "Guidly is designed to complement, not replace, professional therapy. While our AI provides valuable support and guidance, we always recommend consulting with licensed professionals for serious mental health concerns.",
-                },
-                {
-                  question: "How does the AI understand my specific situation?",
-                  answer:
-                    "Our AI is trained on thousands of counseling sessions and psychological frameworks. It learns from your conversations to provide increasingly personalized guidance while maintaining complete privacy.",
+                    "Absolutely! Guidly offers personalized interview preparation including practice questions, feedback on your responses, and tips tailored to your specific role and industry. Our AI mock interviewer helps you build confidence before the real thing.",
                 },
                 {
                   question: "What if I need help outside business hours?",
                   answer:
-                    "That's the beauty of AI! Guidly is available 24/7, 365 days a year. Whether it's 3 AM or during holidays, your AI counselor is always ready to help.",
+                    "That's the beauty of Guidly! Our AI career companion is available 24/7, 365 days a year. Whether it's 3 AM or during holidays, Guidly is always ready to help with your career questions.",
                 },
               ].map((faq, index) => (
                 <div
@@ -472,13 +556,57 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Newsletter Section */}
+        {/* Final CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="glass-panel rounded-3xl p-12 shadow-2xl animate-fade-in-up relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-3xl"></div>
+              <div className="relative z-10">
+                <TrendingUp className="h-16 w-16 text-primary mx-auto mb-6" />
+                <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Ready to Transform Your Career?</h2>
+                <p className="text-xl text-secondary mb-8 leading-relaxed">
+                  Join thousands of users who have already started their journey towards career success with Guidly's AI-powered guidance. Your transformation begins with a single conversation.
+                </p>
+                <div className="flex flex-col gap-4 justify-center items-center">
+                  <Button
+                    onClick={() => router.push("/auth?mode=register")}
+                    className="bg-[rgb(4,131,131)] hover:bg-[rgb(3,110,110)] text-white shadow-2xl rounded-2xl px-8 py-6 text-md font-semibold border border-primary/30 hover:scale-105 transition-all duration-300 group"
+                  >
+                    Start Your Journey Now
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                  <div className="flex items-center gap-6 text-sm text-secondary">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-[rgb(4,131,131)]" />
+                      Start free
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-[rgb(4,131,131)]" />
+                      Instant career guidance
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-[rgb(4,131,131)]" />
+                      Cancel anytime
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Full Width Dark Grey Divider */}
+        <div className="w-full">
+          <hr className="border-t-2 border-gray-200" />
+        </div>
+
+        {/* Newsletter Section - Blended with Footer */}
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-white/5 dark:to-black/5">
           <div className="max-w-4xl mx-auto">
-            <div className="glass-panel rounded-3xl p-8 md:p-12 shadow-2xl animate-fade-in-up text-center">
+            <div className="rounded-3xl p-8 md:p-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Stay Updated</h2>
               <p className="text-xl text-secondary mb-8">
-                Get the latest tips, insights, and updates on personal growth and AI-powered guidance
+                Get the latest tips, insights, and updates on personal growth <br /> and AI-powered guidance
               </p>
               <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <Input
@@ -486,12 +614,12 @@ export default function LandingPage() {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 glass-panel border-primary/20 rounded-xl h-12 text-primary placeholder:text-primary/50"
+                  className="flex-1 glass-panel border-primary/20 rounded-xl h-10 text-primary placeholder:text-[rgb(4,131,131)]/50"
                   required
                 />
                 <Button
                   type="submit"
-                  className="bg-primary/90 hover:bg-primary text-white shadow-xl rounded-xl px-6 py-3 font-semibold border border-primary/30 hover:scale-105 transition-all duration-300"
+                  className="bg-[rgb(4,131,131)] hover:bg-[rgb(3,110,110)] text-white shadow-xl rounded-xl px-6 py-5 font-semibold border border-primary/30 hover:scale-105 transition-all duration-300"
                 >
                   Subscribe
                 </Button>
@@ -501,126 +629,48 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="glass-panel rounded-3xl p-12 shadow-2xl animate-fade-in-up relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-3xl"></div>
-              <div className="relative z-10">
-                <Award className="h-16 w-16 text-primary mx-auto mb-6" />
-                <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Ready to Transform Your Life?</h2>
-                <p className="text-xl text-secondary mb-8 leading-relaxed">
-                  Join thousands of users who have already started their journey towards personal and professional
-                  growth with Guidly's AI-powered guidance. Your transformation begins with a single conversation.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Button
-                    onClick={() => router.push("/auth?mode=register")}
-                    className="bg-primary/90 hover:bg-primary text-white shadow-2xl rounded-2xl px-12 py-4 text-xl font-semibold border border-primary/30 hover:scale-105 transition-all duration-300 group"
-                  >
-                    Start Your Journey Free
-                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
-                  <div className="text-sm text-secondary">✨ No credit card required • Free forever plan available</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Full Width Dark Grey Divider */}
+        <div className="w-full">
+          <hr className="border-t-2 border-gray-200" />
+        </div>
 
-        {/* Enhanced Footer */}
-        <footer className="py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+        {/* Simple One-Liner Footer */}
+        <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-t from-white/5 to-transparent dark:from-black/5">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-              <div className="col-span-1 md:col-span-2">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="glass-panel p-2 rounded-xl shadow-lg">
-                    <Sparkles className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <span className="text-xl font-bold text-primary">Guidly</span>
-                    <div className="text-xs text-muted">AI Life Companion</div>
-                  </div>
-                </div>
-                <p className="text-secondary mb-4 max-w-md">
-                  Empowering lives through AI-powered guidance for mental wellness, career growth, and entrepreneurial
-                  success.
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="glass-panel p-2 rounded-lg cursor-pointer hover:scale-110 transition-transform">
-                    <MessageSquare className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="glass-panel p-2 rounded-lg cursor-pointer hover:scale-110 transition-transform">
-                    <Users className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="glass-panel p-2 rounded-lg cursor-pointer hover:scale-110 transition-transform">
-                    <Heart className="h-5 w-5 text-primary" />
-                  </div>
-                </div>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              
+              {/* Social Icons - Left */}
+              <div className="flex items-center gap-4">
+                <a 
+                  href="#" 
+                  className="glass-panel p-2 rounded-full hover:scale-110 transition-all duration-300 shadow-lg"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5 text-primary" />
+                </a>
+                <a 
+                  href="#" 
+                  className="glass-panel p-2 rounded-full hover:scale-110 transition-all duration-300 shadow-lg"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5 text-primary" />
+                </a>
               </div>
 
-              <div>
-                <h4 className="text-primary font-semibold mb-4">Product</h4>
-                <ul className="space-y-2 text-secondary text-sm">
-                  <li>
-                    <a href="#features" className="hover:text-primary transition-colors">
-                      Features
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#how-it-works" className="hover:text-primary transition-colors">
-                      How it Works
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-primary transition-colors">
-                      Pricing
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-primary transition-colors">
-                      API
-                    </a>
-                  </li>
-                </ul>
+              {/* Company Name - Center */}
+              <div className="flex items-center justify-center">
+                <img 
+                  src="/guidly_logos/Guidly/Guidly-logo.png" 
+                  alt="Guidly Logo" 
+                  className="h-8 w-auto object-contain"
+                />
               </div>
 
-              <div>
-                <h4 className="text-primary font-semibold mb-4">Support</h4>
-                <ul className="space-y-2 text-secondary text-sm">
-                  <li>
-                    <a href="#faq" className="hover:text-primary transition-colors">
-                      FAQ
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-primary transition-colors">
-                      Help Center
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-primary transition-colors">
-                      Contact Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-primary transition-colors">
-                      Status
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
-              <div className="flex items-center gap-6 text-secondary text-sm mb-4 md:mb-0">
-                <button className="hover:text-primary transition-colors">Privacy Policy</button>
-                <button className="hover:text-primary transition-colors">Terms of Service</button>
-                <button className="hover:text-primary transition-colors">Cookie Policy</button>
-              </div>
+              {/* Copyright - Right */}
               <div className="text-secondary text-sm">
-                © 2024 Guidly. All rights reserved. Made with ❤️ for human growth.
+                ©2025 Guidly. All rights reserved
               </div>
+              
             </div>
           </div>
         </footer>
