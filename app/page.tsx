@@ -86,34 +86,34 @@ export default function LandingPage() {
         {/* Enhanced Navigation - Fixed at top */}
         <nav className="navbar-glass-panel rounded-2xl fixed top-4 left-1/2 transform -translate-x-1/2 z-50 shadow-2xl">
           <div className="px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16 gap-8 lg:gap-16">
+            <div className="flex justify-between items-center h-16 gap-4 sm:gap-6 lg:gap-8 xl:gap-16">
               <div className="flex items-center gap-3">
                 <div className="p-1 rounded-xl animate-gentle-bounce">
                   <img 
                     src="/guidly_logos/Guidly/Guidly-Logo.png" 
                     alt="Guidly Logo" 
-                    className="h-10 w-auto object-contain"
+                    className="h-10 min-h-[2.5rem] w-auto object-contain max-w-[160px] sm:max-w-[180px]"
                   />
                 </div>
               </div>
-              <div className="hidden md:flex items-center gap-12 flex-1 justify-center">
-                <a href="#features" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors">
+              <div className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-12 flex-1 justify-center">
+                <a href="#features" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors whitespace-nowrap">
                   Features
                 </a>
-                <a href="#why-users-love-guidly" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors">
+                <a href="#why-users-love-guidly" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors whitespace-nowrap">
                   Why Choose Guidly
                 </a>
-                <a href="#how-it-works" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors">
+                <a href="#how-it-works" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors whitespace-nowrap">
                   How it Works
                 </a>
-                <a href="#faq" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors">
+                <a href="#faq" className="text-secondary hover:text-[rgb(4,131,131)] transition-colors whitespace-nowrap">
                   FAQ
                 </a>
               </div>
               <div className="flex items-center gap-4">
                 <Button
                   onClick={() => router.push("/auth")}
-                  className="bg-[rgb(4,131,131)] hover:bg-[rgb(3,110,110)] text-white shadow-xl rounded-xl px-6 py-2 font-semibold border border-primary/30 hover:scale-105 transition-all duration-300"
+                  className="bg-[rgb(4,131,131)] hover:bg-[rgb(3,110,110)] text-white shadow-xl rounded-xl px-6 py-2 font-semibold border border-primary/30 hover:scale-105 transition-all duration-300 whitespace-nowrap"
                 >
                   Sign In
                 </Button>
@@ -150,7 +150,7 @@ export default function LandingPage() {
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
                 </div>
-                <div className="flex items-center gap-6 text-sm text-secondary">
+                <div className="flex flex-wrap justify-center sm:justify-start items-center gap-6 text-sm text-secondary text-center sm:text-left">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-[rgb(4,131,131)]" />
                     Start free
@@ -660,7 +660,7 @@ export default function LandingPage() {
               {/* Company Name - Center */}
               <div className="flex items-center justify-center">
                 <img 
-                  src="/guidly_logos/Guidly/Guidly-logo.png" 
+                  src="/guidly_logos/Guidly/Guidly-Logo.png" 
                   alt="Guidly Logo" 
                   className="h-8 w-auto object-contain"
                 />
